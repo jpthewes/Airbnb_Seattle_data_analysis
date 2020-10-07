@@ -30,7 +30,7 @@ For this project, I was interestested in the following questions after taking a 
 
 ## Results<a name="results"></a>
 
-The main findings of the code can be found at the post available [here](https://medium.com/@jpthewes/understanding-airbnb-prices-and-how-they-make-you-happy-294c10b87099.
+The main findings of the code can be found at the post available [here](https://medium.com/@jpthewes/understanding-airbnb-prices-and-how-they-make-you-happy-294c10b87099).
 
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>

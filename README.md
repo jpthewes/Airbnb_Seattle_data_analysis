@@ -13,7 +13,7 @@ Project in the Data Scientist Nanodegree of Udacity
 
 This code runs with Python 3 and requires some additional libraries. For the installation of these, you can run:
 ` pip3 install -r requirements.txt `
-Afterwards you can just execute the `anylysis.py` script and enjoy the data analysis results in the command line.
+Afterwards you can just execute the `analysis.py` script and enjoy the data analysis results in the command line.
 
 ## Project Motivation<a name="motivation"></a>
 

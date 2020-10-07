@@ -1,0 +1,10 @@
+# to handle data
+pandas==1.1.3
+numpy==1.19.2
+
+# to plot data
+matplotlib==3.3.2
+seaborn==0.11.0
+
+# for machine learning
+sklearn=0.0

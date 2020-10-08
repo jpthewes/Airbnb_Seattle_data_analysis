@@ -166,12 +166,26 @@ def fit_train_test_model(X, y, test_size=0.3, rand_state=42):
     return test_score, train_score, lm_model, X_train, X_test, y_train, y_test
 
 def main():
+    """
+    This analysis aims to answer the following questions (Business Understanding):
+    1. What are the key factors determining the price of the appartments?
+    2. Will I be happier if I spend those extra dollars for the upgrade?
+    
+    For that, the price and rating scores of Airbnbs are used as a response
+    value of a linear regression model. After training and testing the models, 
+    taking a look at the coefficients of the model should lead to answering to
+    above questions.
+    This can bring us a better Business Understanding through Data Science
+    while following the CRISP-DM process (steps are commented in code)!
+    """
     df = pd.read_csv("data/listings.csv")
-    # get an insight of the data
+    # get an insight of the data --> CRISP-DM Data Understanding
     pre_plot(df)
 
     print("##################### Price")
+    # --> CRISP-DM Data Preparation
     X,y = clean_data(df, "price", ['weekly_price', 'monthly_price'])
+    #--> CRISP-DM Modeling and Evaluation 
     test_score, train_score, lm_model, X_train, X_test, y_train, y_test = fit_train_test_model(X, y)
     print("The score on the test data is: ", test_score)
     print("The score on the training data is: ", train_score)
@@ -183,7 +197,9 @@ def main():
     
     print("##################### Price w/o neighbourhood")
     df = pd.read_csv("data/listings.csv")
+    # --> CRISP-DM Data Preparation
     X,y = clean_data(df, "price", ['weekly_price', 'monthly_price', 'neighbourhood'])
+    #--> CRISP-DM Modeling and Evaluation 
     test_score, train_score, lm_model, X_train, X_test, y_train, y_test = fit_train_test_model(X, y)
     print("The score on the test data is: ", test_score)
     print("The score on the training data is: ", train_score)
@@ -195,9 +211,12 @@ def main():
     
     print("##################### Ratings")
     df = pd.read_csv("data/listings.csv")
-    X,y = clean_data(df, 'review_scores_rating', ['review_scores_accuracy', 'review_scores_cleanliness', 'review_scores_checkin',
-       'review_scores_communication', 'review_scores_location',
-       'review_scores_value'])
+    # --> CRISP-DM Data Preparation
+    X,y = clean_data(df, 'review_scores_rating', ['review_scores_accuracy', 
+        'review_scores_cleanliness', 'review_scores_checkin',
+        'review_scores_communication', 'review_scores_location',
+        'review_scores_value'])
+    #--> CRISP-DM Modeling and Evaluation 
     test_score, train_score, lm_model, X_train, X_test, y_train, y_test = fit_train_test_model(X, y)
     print("The score on the test data is: ", test_score)
     print("The score on the training data is: ", train_score)
